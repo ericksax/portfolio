@@ -1,0 +1,44 @@
+.container {
+  margin: 4rem auto;
+  padding: 5rem;
+  max-width: 1280px;
+
+  header {
+    width: 100%;
+    padding: 2rem;
+    border: solid 0.5px var(--line-border);
+    border-radius: 30px;
+
+    // padding: 0 4rem;
+
+    h1 {
+      color: var(--text);
+      font-size: 2.5rem;
+      font-weight: 900;
+    }
+  }
+}
+
+.content {
+  color: var(--secundary-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: solid 0.5px var(--line-border);
+  border-radius: 50px 0 50px 0;
+  margin: 50px 0;
+  padding: 2rem;
+
+  aside {
+    padding: 0 7rem 0 0;
+    height: 100%;
+    width: 100%;
+
+    p {
+      line-height: 2rem;
+      letter-spacing: 2px;
+      text-align: justify;
+      text-indent: 2rem;
+    }
+  }
+}

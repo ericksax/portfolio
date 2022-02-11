@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  max-width: 1280px;
+  height: 5rem;
+  padding: 0 5rem;
+  background: transparentize($color: transparent, $amount: 0);
+  top: 0px;
+  position: sticky;
+  backdrop-filter: blur(15px);
+  z-index: 1;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.content {
+  padding: 0 1rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s;
+  color: var(--text);
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  transition: 0.2s;
+
+  li::after {
+    content: "";
+    background-color: var(--text);
+    width: 0;
+    display: block;
+    height: 1px;
+    transition: 0.3s;
+  }
+
+  li:hover::after {
+    width: 100%;
+  }
+
+  li a:active::after {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,15 @@
+.gradient {
+  height: 24px;
+  width: 100%;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 55, 244, 1) 0%,
+    rgba(212, 152, 221, 1) 14%,
+    rgb(71, 82, 240) 44%,
+    rgb(217, 137, 241),
+    rgba(178, 98, 238, 1) 100%,
+    rgb(71, 82, 240) 44%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
