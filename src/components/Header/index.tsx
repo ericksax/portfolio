@@ -7,9 +7,9 @@ import logo from "../../assets/logoErick.png";
 export const Header = () => {
   return (
     <nav className={styles.container}>
-      <div>
+      {/* <div>
         <Image src={logo} alt="logo" width={200} height={40} />
-      </div>
+      </div> */}
 
       <ul className={styles.content}>
         <li>
