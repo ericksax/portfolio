@@ -4,7 +4,7 @@ import { GradientBar } from "../components/GradientBar";
 import { Header } from "../components/Header";
 import { ChakraProvider } from "@chakra-ui/react";
 
-import "../styles/globals.scss";
+
 import { theme } from "../styles/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {

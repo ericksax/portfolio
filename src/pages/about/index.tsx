@@ -1,44 +1,50 @@
-import { Heading, Text, Box, calc } from "@chakra-ui/react";
-import { theme } from "../../styles/theme";
+import { Heading, Text, Box, Flex, Stack } from "@chakra-ui/react";
+import { colors } from "../../styles/colors";
+
 
 export default function About() {
   return (
-    <Box h="100vh" m="16">
-      <Box
-        h="800px"
+  <Box as="main" mx="8" >
+    <Stack 
+      spacing={16}
+        as="section"
+        height="100vh"
         w="100%"
         maxW="1024px"
         mt="16"
         mx="auto"
         borderWidth="1px"
-        borderColor={theme.colors.brand.lineBorder}
+        borderColor={ colors.lineBorder.dark }
         borderRadius={16}
         p={8}
         my="16"
       >
-        <Heading as="h2">
+      
+        <Heading as="h2" w="100%">
           <Text
-            bgGradient="linear(to-r, #2d3bb9, #FF0080, #ff009d)"
+            bgGradient={colors.linearGradient}
             bgClip="text"
             fontSize="48"
           >
             Sobre Mim
           </Text>
         </Heading>
+      
+       
         <Box
           as="section"
           borderWidth="1px"
-          borderColor={theme.colors.brand.lineBorder}
+          borderColor={colors.lineBorder.dark}
           borderRadius={16}
-          mt="16"
           p="8"
-          h="100%"
+   
+       
         >
           <Text
             lineHeight="2"
             letterSpacing="2px"
             textAlign="justify"
-            color={theme.colors.brand.secundaryText}
+            color={colors.secundaryText.dark}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
             perferendis sint illo assumenda laudantium fugit aliquam accusamus,
@@ -49,7 +55,8 @@ export default function About() {
             quis tenetur debitis ab ratione quidem non placeat?
           </Text>
         </Box>
-      </Box>
+      
+      </Stack>
     </Box>
   );
 }

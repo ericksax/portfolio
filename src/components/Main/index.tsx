@@ -1,25 +1,26 @@
-import styles from "./styles.module.scss";
+
 import Image from "next/image";
 import { Box, Heading, Flex, Text, Img, Stack } from "@chakra-ui/react";
 import { theme } from "../../styles/theme";
 
 export const Main = () => {
   return (
+    <Box as="main" mx="8">
     <Stack
       as="main"
       w="100%"
       maxWidth="1024px"
       mx="auto"
       mt={16}
-      p="2rem"
+      p="8"
       spacing="16"
-      borderWidth="0.5px"
+      borderWidth="1px"
       borderRadius="16"
       borderColor={theme.colors.brand.lineBorder}
     >
       <Heading as="h2">
         <Text
-          bgGradient="linear(to-r, #2d3bb9, #FF0080, #ff009d)"
+          bgGradient={theme.colors.brand.linearGradient}
           bgClip="text"
           fontSize="48"
         >
@@ -31,7 +32,7 @@ export const Main = () => {
         align="center"
         justify="space-beween"
         border="sm white 1px"
-        borderWidth="0.1px"
+        borderWidth="1px"
         borderRadius={16}
         borderColor={theme.colors.brand.lineBorder}
       >
@@ -131,5 +132,6 @@ export const Main = () => {
         />
       </Flex>
     </Stack>
+    </Box>
   );
 };
