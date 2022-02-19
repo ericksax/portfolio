@@ -1,12 +1,19 @@
-import { Heading, Text, Box, Flex, Stack } from "@chakra-ui/react";
+import {
+  Heading,
+  Text,
+  Box,
+  Flex,
+  Stack,
+  useColorMode,
+} from "@chakra-ui/react";
 import { colors } from "../../styles/colors";
 
-
 export default function About() {
+  const { colorMode } = useColorMode();
   return (
-  <Box as="main" mx="8" >
-    <Stack 
-      spacing={16}
+    <Box as="main" mx="8">
+      <Stack
+        spacing={16}
         as="section"
         height="100vh"
         w="100%"
@@ -14,31 +21,31 @@ export default function About() {
         mt="16"
         mx="auto"
         borderWidth="1px"
-        borderColor={ colors.lineBorder.dark }
+        borderColor={
+          colorMode === "light"
+            ? colors.lineBorder.dark
+            : colors.lineBorder.ligth
+        }
         borderRadius={16}
         p={8}
         my="16"
       >
-      
         <Heading as="h2" w="100%">
-          <Text
-            bgGradient={colors.linearGradient}
-            bgClip="text"
-            fontSize="48"
-          >
+          <Text bgGradient={colors.linearGradient} bgClip="text" fontSize="48">
             Sobre Mim
           </Text>
         </Heading>
-      
-       
+
         <Box
           as="section"
           borderWidth="1px"
-          borderColor={colors.lineBorder.dark}
+          borderColor={
+            colorMode === "light"
+              ? colors.lineBorder.dark
+              : colors.lineBorder.ligth
+          }
           borderRadius={16}
           p="8"
-   
-       
         >
           <Text
             lineHeight="2"
@@ -55,7 +62,6 @@ export default function About() {
             quis tenetur debitis ab ratione quidem non placeat?
           </Text>
         </Box>
-      
       </Stack>
     </Box>
   );

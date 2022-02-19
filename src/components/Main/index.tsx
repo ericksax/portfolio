@@ -1,137 +1,114 @@
-
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Box, Heading, Flex, Text, Img, Stack } from "@chakra-ui/react";
-import { theme } from "../../styles/theme";
+import { colors } from "../../styles/colors";
 
-export const Main = () => {
+import {
+  Box,
+  Heading,
+  Flex,
+  Text,
+  Img,
+  Stack,
+  useColorMode,
+} from "@chakra-ui/react";
+
+interface Repository {
+  repo: string;
+  description: string;
+  link: string;
+  image: string;
+  owner: string;
+}
+
+export const Main = (): JSX.Element => {
+  const { colorMode } = useColorMode();
+  const IsColorLight = colorMode === "light";
+
+  const [repos, setRepos] = useState<Repository[]>();
+
+  useEffect(() => {
+    fetch("https://gh-pinned-repos.egoist.sh/?username=ericksax")
+      .then((response) => response.json())
+      .then((response) => {
+        setRepos([...response]);
+        console.log(response);
+      });
+  }, []);
+
   return (
     <Box as="main" mx="8">
-    <Stack
-      as="main"
-      w="100%"
-      maxWidth="1024px"
-      mx="auto"
-      mt={16}
-      p="8"
-      spacing="16"
-      borderWidth="1px"
-      borderRadius="16"
-      borderColor={theme.colors.brand.lineBorder}
-    >
-      <Heading as="h2">
-        <Text
-          bgGradient={theme.colors.brand.linearGradient}
-          bgClip="text"
-          fontSize="48"
-        >
-          Projetos
-        </Text>
-      </Heading>
-      <Flex
-        as="section"
-        align="center"
-        justify="space-beween"
-        border="sm white 1px"
+      <Stack
+        as="main"
+        w="100%"
+        maxWidth="1024px"
+        mx="auto"
+        mt={16}
+        p="8"
+        spacing="16"
         borderWidth="1px"
-        borderRadius={16}
-        borderColor={theme.colors.brand.lineBorder}
+        borderRadius="16"
+        borderColor={
+          IsColorLight ? colors.lineBorder.dark : colors.lineBorder.ligth
+        }
       >
-        <Box as="aside" borderRadius="md white">
-          <Text textAlign="justify" p="16" lineHeight="8" letterSpacing={2}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            laborum tempora provident perspiciatis consectetur quia at enim
-            aliquid assumenda libero cupiditate quidem veniam perferendis fuga
-            debitis repellat recusandae, suscipit sit!
+        <Heading as="h2">
+          <Text bgGradient={colors.linearGradient} bgClip="text" fontSize="48">
+            Projetos
           </Text>
-        </Box>
-        <Img
-          p={4}
-          src="https://github.com/ericksax.png"
-          alt="erick"
-          width={64}
-          height={64}
-          borderRadius="50%"
-        />
-      </Flex>
-      <Flex
-        as="section"
-        align="center"
-        justify="space-beween"
-        border="sm white 1px"
-        borderWidth="0.1px"
-        borderRadius={16}
-        borderColor={theme.colors.brand.lineBorder}
-      >
-        <Box as="aside" borderRadius="md white">
-          <Text textAlign="justify" p="16" lineHeight="8" letterSpacing={2}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            laborum tempora provident perspiciatis consectetur quia at enim
-            aliquid assumenda libero cupiditate quidem veniam perferendis fuga
-            debitis repellat recusandae, suscipit sit!
-          </Text>
-        </Box>
-        <Img
-          p={4}
-          src="https://github.com/ericksax.png"
-          alt="erick"
-          width={64}
-          height={64}
-          borderRadius="50%"
-        />
-      </Flex>
-      <Flex
-        as="section"
-        align="center"
-        justify="space-beween"
-        border="sm white 1px"
-        borderWidth="0.1px"
-        borderRadius={16}
-        borderColor={theme.colors.brand.lineBorder}
-      >
-        <Box as="aside" borderRadius="md white">
-          <Text textAlign="justify" p="16" lineHeight="8" letterSpacing={2}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            laborum tempora provident perspiciatis consectetur quia at enim
-            aliquid assumenda libero cupiditate quidem veniam perferendis fuga
-            debitis repellat recusandae, suscipit sit!
-          </Text>
-        </Box>
-        <Img
-          p={4}
-          src="https://github.com/ericksax.png"
-          alt="erick"
-          width={64}
-          height={64}
-          borderRadius="50%"
-        />
-      </Flex>
-      <Flex
-        as="section"
-        align="center"
-        justify="space-beween"
-        border="sm white 1px"
-        borderWidth="0.1px"
-        borderRadius={16}
-        borderColor={theme.colors.brand.lineBorder}
-      >
-        <Box as="aside" borderRadius="md white">
-          <Text textAlign="justify" p="16" lineHeight="8" letterSpacing={2}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            laborum tempora provident perspiciatis consectetur quia at enim
-            aliquid assumenda libero cupiditate quidem veniam perferendis fuga
-            debitis repellat recusandae, suscipit sit!
-          </Text>
-        </Box>
-        <Img
-          p={4}
-          src="https://github.com/ericksax.png"
-          alt="erick"
-          width={64}
-          height={64}
-          borderRadius="50%"
-        />
-      </Flex>
-    </Stack>
+        </Heading>
+        {repos?.map((repo) => {
+          return (
+            <>
+              <Flex
+                key={repo.link}
+                as="section"
+                align="center"
+                w="100%"
+                h="300px"
+                justify="space-between"
+                borderWidth="1px"
+                borderRadius={16}
+                borderColor={
+                  IsColorLight
+                    ? colors.lineBorder.dark
+                    : colors.lineBorder.ligth
+                }
+              >
+                <Box
+                  w="50%"
+                  as="aside"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Text
+                    textAlign="justify"
+                    p="12"
+                    lineHeight="8"
+                    letterSpacing={2}
+                    color={
+                      IsColorLight
+                        ? colors.secundaryText.dark
+                        : colors.secundaryText.light
+                    }
+                  >
+                    {repo.description}
+                  </Text>
+                </Box>
+                <Box w="50%" display="flex" justifyContent="center" p="12">
+                  <Img
+                    src={repo.image}
+                    alt="erick"
+                    w="350px"
+                    h="180px"
+                    borderRadius="12"
+                  />
+                </Box>
+              </Flex>
+            </>
+          );
+        })}
+      </Stack>
     </Box>
   );
 };

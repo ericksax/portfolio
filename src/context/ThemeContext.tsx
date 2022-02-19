@@ -1,33 +1,42 @@
-
 import { createContext, useState, ReactNode, useContext } from "react";
+import { colors } from "../styles/colors";
 
 interface ThemeProps {
-  theme: boolean,
-  setTheme: (theme: boolean) => void
+  theme: boolean;
+  setTheme: (theme: boolean) => void;
+  ModeTheme: () => string;
 }
 
 interface ChildProps {
-  children?: ReactNode
+  children?: ReactNode;
 }
 
 export const ThemeContext = createContext<ThemeProps>({} as ThemeProps);
 
-export function ThemeModeProviter({ children }: ChildProps): JSX.Element {
-  const [theme, setTheme] = useState(false)
+export function ThemeModeProvider({ children }: ChildProps): JSX.Element {
+  const [theme, setTheme] = useState(false);
 
-  return ( 
-  <ThemeContext.Provider value={{theme, setTheme}}>
-    {children}
-  </ThemeContext.Provider>
+  function ModeTheme() {
+    if (theme) {
+      return colors.background.dark;
+    } else {
+      return colors.background.light;
+    }
+  }
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme, ModeTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
 }
 
 const useTheme = () => {
-  const {theme, setTheme} = useContext(ThemeContext)
+  const { theme, setTheme } = useContext(ThemeContext);
   return {
-    setTheme, 
-    theme
-  }
-}
+    setTheme,
+    theme,
+  };
+};
 
-export default useTheme
+export default useTheme;

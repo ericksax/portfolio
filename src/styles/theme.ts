@@ -1,12 +1,21 @@
 import { extendTheme } from "@chakra-ui/react";
-import { colors } from "../styles/colors";
+import { mode, StyleFunctionProps } from "@chakra-ui/theme-tools";
+import { Dict } from "@chakra-ui/utils";
+import { colors } from "./colors";
+
+interface ModeProps {
+  props: Dict<any> | StyleFunctionProps;
+}
 
 export const theme = extendTheme({
   styles: {
-    global: {
+    global: (props: ModeProps) => ({
       "html, body": {
         fontSize: "md",
-        backgroundColor: colors.background.light,
+        backgroundColor: mode(
+          colors.background.dark,
+          colors.background.light
+        )(props),
         color: "gray.300",
         font_family: "Poppins, helvetica, sans-serif",
         a: {
@@ -18,6 +27,6 @@ export const theme = extendTheme({
           text_decoration: "none",
         },
       },
-    },
+    }),
   },
 });
