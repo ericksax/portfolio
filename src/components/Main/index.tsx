@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { colors } from "../../styles/colors";
 
 import {
@@ -10,6 +9,7 @@ import {
   Img,
   Stack,
   useColorMode,
+  Spinner,
 } from "@chakra-ui/react";
 
 interface Repository {
@@ -25,18 +25,21 @@ export const Main = (): JSX.Element => {
   const IsColorLight = colorMode === "light";
 
   const [repos, setRepos] = useState<Repository[]>();
+  const [isFetching, setIsFetching] = useState(true);
 
   useEffect(() => {
     fetch("https://gh-pinned-repos.egoist.sh/?username=ericksax")
       .then((response) => response.json())
       .then((response) => {
         setRepos([...response]);
-        console.log(response);
+      })
+      .finally(() => {
+        setIsFetching(false);
       });
   }, []);
 
   return (
-    <Box as="main" mx="8">
+    <Box as="main" mx="8" minHeight="100vh">
       <Stack
         as="main"
         w="100%"
@@ -56,9 +59,11 @@ export const Main = (): JSX.Element => {
             Projetos
           </Text>
         </Heading>
-        {repos?.map((repo) => {
-          return (
-            <>
+        {isFetching ? (
+          <Spinner />
+        ) : (
+          repos?.map((repo) => {
+            return (
               <Flex
                 key={repo.link}
                 as="section"
@@ -95,6 +100,7 @@ export const Main = (): JSX.Element => {
                     {repo.description}
                   </Text>
                 </Box>
+
                 <Box w="50%" display="flex" justifyContent="center" p="12">
                   <Img
                     src={repo.image}
@@ -105,9 +111,9 @@ export const Main = (): JSX.Element => {
                   />
                 </Box>
               </Flex>
-            </>
-          );
-        })}
+            );
+          })
+        )}
       </Stack>
     </Box>
   );

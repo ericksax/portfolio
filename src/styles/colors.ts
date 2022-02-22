@@ -15,4 +15,5 @@ export const colors = {
     dark: brandColors["dark-line-border"],
   },
   linearGradient: brandColors["linear-gradient"],
+  linear: brandColors["linear-gradient-point"],
 };

@@ -6,6 +6,7 @@ export const Footer = () => {
   const { colorMode } = useColorMode();
   return (
     <Flex
+      mb="0"
       as="footer"
       direction="column"
       justify="center"

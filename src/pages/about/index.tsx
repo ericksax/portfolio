@@ -2,20 +2,24 @@ import {
   Heading,
   Text,
   Box,
-  Flex,
   Stack,
   useColorMode,
+  Flex,
 } from "@chakra-ui/react";
-import { colors } from "../../styles/colors";
 
-export default function About() {
+import { TimeLine } from "../../components/timeLine";
+import { colors } from "../../styles/colors";
+import Image from "next/image";
+import cityPic from "../../../images/juizdefora.jpg";
+import { css } from "@emotion/css";
+
+export default function About(): JSX.Element {
   const { colorMode } = useColorMode();
   return (
-    <Box as="main" mx="8">
+    <Box as="main" mx="8" minHeight="100vh">
       <Stack
         spacing={16}
         as="section"
-        height="100vh"
         w="100%"
         maxW="1024px"
         mt="16"
@@ -51,16 +55,30 @@ export default function About() {
             lineHeight="2"
             letterSpacing="2px"
             textAlign="justify"
-            color={colors.secundaryText.dark}
+            style={{ textIndent: 20 }}
+            color={
+              colorMode === "light"
+                ? colors.secundaryText.dark
+                : colors.secundaryText.light
+            }
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-            perferendis sint illo assumenda laudantium fugit aliquam accusamus,
-            provident suscipit accusantium est excepturi possimus dicta beatae
-            deleniti at. Dicta, distinctio ut! Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Corrupti, nemo. Suscipit quos placeat
-            natus explicabo rem debitis officia temporibus. Tempore est amet
-            quis tenetur debitis ab ratione quidem non placeat?
+            Eu nasci em Juiz de Fora - MG em junho de 1984, foi onde eu morei
+            por 20 anos até me mudar para Foz do Iguacu no Paraná residindo por
+            dez anos antes de retornar a terra natal.
           </Text>
+          <Flex direction="column" my="8" width="780px" mx="auto">
+            <Image
+              src={cityPic}
+              alt="foto da cidade Juiz de Fora"
+              height="380px"
+              className={css`
+                border-radius: 16px;
+              `}
+            ></Image>
+            Juiz de Fora - Mg
+          </Flex>
+
+          <TimeLine />
         </Box>
       </Stack>
     </Box>

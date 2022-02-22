@@ -11,20 +11,33 @@ export const theme = extendTheme({
   styles: {
     global: (props: ModeProps) => ({
       "html, body": {
-        fontSize: "md",
+        fontSize: "lg",
         backgroundColor: mode(
           colors.background.dark,
           colors.background.light
         )(props),
         color: "gray.300",
         font_family: "Poppins, helvetica, sans-serif",
-        a: {
-          text_decoration: "none",
+        p: {
+          color: mode(
+            colors.secundaryText.dark,
+            colors.secundaryText.light
+          )(props),
         },
-
-        li: {
-          listStyle: "none",
-          text_decoration: "none",
+        strong: {
+          color: mode(
+            colors.secundaryText.dark,
+            colors.secundaryText.light
+          )(props),
+        },
+      },
+      li: {
+        a: {
+          letterSpacing: 2,
+          _hover: {
+            textDecoration: "underline",
+            color: mode("white", "black")(props),
+          },
         },
       },
     }),

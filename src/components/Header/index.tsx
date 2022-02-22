@@ -26,6 +26,7 @@ export const Header = () => {
       top="0"
       backdropFilter="auto"
       backdropBlur="10px"
+      zIndex="2"
     >
       <Flex
         as="nav"
@@ -33,16 +34,17 @@ export const Header = () => {
         maxWidth="1024px"
         h="100px"
         justify="space-between"
+        p="8"
       >
         <Breadcrumb
-          as="a"
           separator=""
           w="600px"
           h="100%"
-          justifyContent="space-between"
           alignItems="center"
           display="flex"
           spacing="50"
+          fontWeight="500"
+          fontSize="sm"
           color={colorMode === "light" ? colors.text.dark : colors.text.light}
         >
           <BreadcrumbItem>
@@ -51,7 +53,9 @@ export const Header = () => {
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/about">About</BreadcrumbLink>
+            <BreadcrumbLink as={Link} href="/about">
+              Sobre
+            </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
             <BreadcrumbLink as={Link} href="/">
@@ -65,12 +69,12 @@ export const Header = () => {
           </BreadcrumbItem>
         </Breadcrumb>
 
-        <Flex align="center" padding=" 0 4rem">
+        <Flex align="center" padding=" 0 0.25rem">
           <Button variant="unstyled" onClick={toggleColorMode} display="flex">
             {colorMode === "light" ? (
-              <Icon as={FaSun} color="yellow" h="6" w="6" />
+              <Icon as={FaSun} h="6" w="6" />
             ) : (
-              <Icon as={FaMoon} color="gray.400" h="5" w="5" />
+              <Icon as={FaMoon} color="gray.500" h="5" w="5" />
             )}
           </Button>
         </Flex>
