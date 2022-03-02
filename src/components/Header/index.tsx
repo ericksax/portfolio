@@ -1,4 +1,7 @@
+import React from "react";
 import Link from "next/link";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { colors } from "../../styles/colors";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,10 +12,6 @@ import {
   Icon,
   useColorMode,
 } from "@chakra-ui/react";
-import { FaMoon, FaSun } from "react-icons/fa";
-
-import React from "react";
-import { colors } from "../../styles/colors";
 
 export const Header = () => {
   const { toggleColorMode, colorMode } = useColorMode();
@@ -23,7 +22,7 @@ export const Header = () => {
       w="100%"
       justify="center"
       position="sticky"
-      top="0"
+      top="24px"
       backdropFilter="auto"
       backdropBlur="10px"
       zIndex="2"
@@ -31,6 +30,7 @@ export const Header = () => {
       <Flex
         as="nav"
         w="100%"
+        mx="8"
         maxWidth="1024px"
         h="100px"
         justify="space-between"
@@ -38,11 +38,11 @@ export const Header = () => {
       >
         <Breadcrumb
           separator=""
-          w="600px"
+          w="500px"
           h="100%"
           alignItems="center"
           display="flex"
-          spacing="50"
+          spacing="25"
           fontWeight="500"
           fontSize="sm"
           color={colorMode === "light" ? colors.text.dark : colors.text.light}

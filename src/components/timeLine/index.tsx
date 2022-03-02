@@ -67,7 +67,7 @@ export const TimeLine = () => {
         </TitleDot>
         <Line
           style={{
-            borderLeftWidth: "2px",
+            borderLeftWidth: "0px",
             borderColor: colorMode === "light" ? "#A0A0A0" : "#2d3748",
           }}
         >

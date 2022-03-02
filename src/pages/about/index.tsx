@@ -18,42 +18,33 @@ export default function About(): JSX.Element {
   return (
     <Box as="main" mx="8" minHeight="100vh">
       <Stack
-        spacing={16}
+        spacing={12}
         as="section"
         w="100%"
         maxW="1024px"
-        mt="16"
         mx="auto"
-        borderWidth="1px"
-        borderColor={
-          colorMode === "light"
-            ? colors.lineBorder.dark
-            : colors.lineBorder.ligth
-        }
         borderRadius={16}
         p={8}
-        my="16"
+        my="8"
       >
-        <Heading as="h2" w="100%">
+        <Heading as="h1" w="100%">
           <Text bgGradient={colors.linearGradient} bgClip="text" fontSize="48">
             Sobre Mim
           </Text>
         </Heading>
 
-        <Box
+        <Stack
+          spacing="8"
           as="section"
-          borderWidth="1px"
           borderColor={
             colorMode === "light"
               ? colors.lineBorder.dark
               : colors.lineBorder.ligth
           }
           borderRadius={16}
-          p="8"
         >
           <Text
             lineHeight="2"
-            letterSpacing="2px"
             textAlign="justify"
             style={{ textIndent: 20 }}
             color={
@@ -66,7 +57,7 @@ export default function About(): JSX.Element {
             por 20 anos até me mudar para Foz do Iguacu no Paraná residindo por
             dez anos antes de retornar a terra natal.
           </Text>
-          <Flex direction="column" my="8" width="780px" mx="auto">
+          <Flex direction="column" my="8" mx="auto">
             <Image
               src={cityPic}
               alt="foto da cidade Juiz de Fora"
@@ -75,11 +66,13 @@ export default function About(): JSX.Element {
                 border-radius: 16px;
               `}
             ></Image>
-            Juiz de Fora - Mg
+            <p>Juiz de Fora - Mg</p>
           </Flex>
-
+          <Heading as="h2" bgGradient={colors.linearGradient} bgClip="text">
+            Timeline
+          </Heading>
           <TimeLine />
-        </Box>
+        </Stack>
       </Stack>
     </Box>
   );

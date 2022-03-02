@@ -11,7 +11,8 @@ export const theme = extendTheme({
   styles: {
     global: (props: ModeProps) => ({
       "html, body": {
-        fontSize: "lg",
+        letterSpacing: "0.08rem",
+        fontSize: "md",
         backgroundColor: mode(
           colors.background.dark,
           colors.background.light

@@ -5,16 +5,21 @@ import { Header } from "../components/Header";
 import { ChakraProvider } from "@chakra-ui/react";
 import { ThemeModeProvider } from "../context/ThemeContext";
 import { theme } from "../styles/theme";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <ThemeModeProvider>
-        <GradientBar />
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-        <GradientBar />
+        <QueryClientProvider client={queryClient}>
+          <GradientBar />
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+          <GradientBar />
+        </QueryClientProvider>
       </ThemeModeProvider>
     </ChakraProvider>
   );

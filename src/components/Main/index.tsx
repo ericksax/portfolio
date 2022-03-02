@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
 import { colors } from "../../styles/colors";
+import { Box, Heading, Text, Stack, Spinner } from "@chakra-ui/react";
+import { CardRepo } from "../CardRepo";
 
-import {
-  Box,
-  Heading,
-  Flex,
-  Text,
-  Img,
-  Stack,
-  useColorMode,
-  Spinner,
-} from "@chakra-ui/react";
+import { Pagination } from "../../components/Pagination";
+import { api } from "../../services/api";
+import { useQuery } from "react-query";
 
 interface Repository {
   repo: string;
@@ -18,25 +13,41 @@ interface Repository {
   link: string;
   image: string;
   owner: string;
+  language: string;
 }
 
 export const Main = (): JSX.Element => {
-  const { colorMode } = useColorMode();
-  const IsColorLight = colorMode === "light";
+  const [pagination, setPagination] = useState([] as number[]);
+  const [newarray, setNewArray] = useState<Repository[] | undefined>([]);
+  const [CurrentPage, setCurrentPage] = useState(1);
+  const limit = 2;
 
-  const [repos, setRepos] = useState<Repository[]>();
-  const [isFetching, setIsFetching] = useState(true);
+  const { data, isFetching, isLoading } = useQuery<Repository[]>(
+    "pinnedRepos",
+    async () => {
+      const { data } = await api("?username=ericksax");
+      const limit = 2;
+      const arrayPages = [];
+      const Pages = Math.ceil(data.length / limit);
+
+      for (let i = 1; i <= Pages; i++) {
+        arrayPages.push(i);
+      }
+
+      setPagination([...arrayPages]);
+
+      return data;
+    }
+  );
 
   useEffect(() => {
-    fetch("https://gh-pinned-repos.egoist.sh/?username=ericksax")
-      .then((response) => response.json())
-      .then((response) => {
-        setRepos([...response]);
-      })
-      .finally(() => {
-        setIsFetching(false);
-      });
-  }, []);
+    const pageStart = Number(CurrentPage - 1) * limit;
+    const pageEnd = pageStart + limit;
+
+    const newarray = data?.slice(pageStart, pageEnd);
+
+    setNewArray(newarray);
+  }, [data, CurrentPage]);
 
   return (
     <Box as="main" mx="8" minHeight="100vh">
@@ -48,73 +59,27 @@ export const Main = (): JSX.Element => {
         mt={16}
         p="8"
         spacing="16"
-        borderWidth="1px"
         borderRadius="16"
-        borderColor={
-          IsColorLight ? colors.lineBorder.dark : colors.lineBorder.ligth
-        }
       >
         <Heading as="h2">
           <Text bgGradient={colors.linearGradient} bgClip="text" fontSize="48">
             Projetos
+            {(!isLoading && isFetching) ?? <Spinner size="sm" ml="4" />}
           </Text>
         </Heading>
-        {isFetching ? (
+        {isLoading ? (
           <Spinner />
         ) : (
-          repos?.map((repo) => {
-            return (
-              <Flex
-                key={repo.link}
-                as="section"
-                align="center"
-                w="100%"
-                h="300px"
-                justify="space-between"
-                borderWidth="1px"
-                borderRadius={16}
-                borderColor={
-                  IsColorLight
-                    ? colors.lineBorder.dark
-                    : colors.lineBorder.ligth
-                }
-              >
-                <Box
-                  w="50%"
-                  as="aside"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  <Text
-                    textAlign="justify"
-                    p="12"
-                    lineHeight="8"
-                    letterSpacing={2}
-                    color={
-                      IsColorLight
-                        ? colors.secundaryText.dark
-                        : colors.secundaryText.light
-                    }
-                  >
-                    {repo.description}
-                  </Text>
-                </Box>
-
-                <Box w="50%" display="flex" justifyContent="center" p="12">
-                  <Img
-                    src={repo.image}
-                    alt="erick"
-                    w="350px"
-                    h="180px"
-                    borderRadius="12"
-                  />
-                </Box>
-              </Flex>
-            );
-          })
+          newarray?.map((repository) => (
+            <CardRepo key={repository.link} repository={repository} />
+          ))
         )}
       </Stack>
+      <Pagination
+        pagination={pagination}
+        setCurrentPage={setCurrentPage}
+        CurrentPage={CurrentPage}
+      />
     </Box>
   );
 };
