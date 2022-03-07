@@ -25,12 +25,13 @@ export const Pagination = ({
           <Button
             onClick={() => setCurrentPage(pages)}
             size="sm"
-            _hover={{ background: { opacity: 0.1 } }}
-            bgClip="background"
-            bgGradient={colors.linear}
             key={index}
+            borderWidth=".5px"
+            borderColor={colors.lineBorder.dark}
+            bg="transparent"
+            _hover={colors.background}
           >
-            {pages}
+            <Text>{pages}</Text>
           </Button>
         ))}
       </HStack>

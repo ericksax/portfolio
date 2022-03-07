@@ -12,11 +12,12 @@ import { colors } from "../../styles/colors";
 import Image from "next/image";
 import cityPic from "../../../images/juizdefora.jpg";
 import { css } from "@emotion/css";
+import { ContainerBox } from "../../components/ContainerBox";
 
 export default function About(): JSX.Element {
   const { colorMode } = useColorMode();
   return (
-    <Box as="main" mx="8" minHeight="100vh">
+    <ContainerBox>
       <Stack
         spacing={12}
         as="section"
@@ -28,7 +29,12 @@ export default function About(): JSX.Element {
         my="8"
       >
         <Heading as="h1" w="100%">
-          <Text bgGradient={colors.linearGradient} bgClip="text" fontSize="48">
+          <Text
+            bgGradient={colors.linearGradient}
+            bgClip="text"
+            fontSize="48"
+            lineHeight="5rem"
+          >
             Sobre Mim
           </Text>
         </Heading>
@@ -74,6 +80,6 @@ export default function About(): JSX.Element {
           <TimeLine />
         </Stack>
       </Stack>
-    </Box>
+    </ContainerBox>
   );
 }

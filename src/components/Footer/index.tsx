@@ -1,5 +1,5 @@
 import { FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import { Flex, Stack, Box, Icon, useColorMode, color } from "@chakra-ui/react";
+import { Flex, Stack, Box, Icon, useColorMode, Text } from "@chakra-ui/react";
 import { colors } from "../../styles/colors";
 
 export const Footer = () => {
@@ -28,7 +28,15 @@ export const Footer = () => {
               : colors.secundaryText.light
           }
         >
-          Social Media
+          <Text
+            color={
+              colorMode === "light"
+                ? colors.secundaryText.dark
+                : colors.secundaryText.light
+            }
+          >
+            Social Media
+          </Text>
         </Box>
         <Stack as="aside" spacing="4" direction="row" justify="center">
           <Icon

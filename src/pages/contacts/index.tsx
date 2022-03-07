@@ -1,27 +1,20 @@
-import { Flex, Heading, Text, useColorMode } from "@chakra-ui/react";
+import { Heading, Text } from "@chakra-ui/react";
+import { ContainerBox } from "../../components/ContainerBox";
 import { colors } from "../../styles/colors";
 
 export default function Contacts() {
-  const { colorMode } = useColorMode();
   return (
-    <Flex
-      as="section"
-      h="100vh"
-      w="100%"
-      maxW="1024px"
-      mx="auto"
-      my="16"
-      borderRadius="16px"
-      borderWidth="1px"
-      borderColor={
-        colorMode === "light" ? colors.lineBorder.dark : colors.lineBorder.ligth
-      }
-    >
+    <ContainerBox>
       <Heading as="h2" w="100%" maxW="1024px" p="8">
-        <Text bgGradient={colors.linearGradient} bgClip="text" fontSize="48">
+        <Text
+          bgGradient={colors.linearGradient}
+          bgClip="text"
+          fontSize="48"
+          lineHeight="5rem"
+        >
           Contatos
         </Text>
       </Heading>
-    </Flex>
+    </ContainerBox>
   );
 }

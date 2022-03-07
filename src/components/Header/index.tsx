@@ -30,7 +30,6 @@ export const Header = () => {
       <Flex
         as="nav"
         w="100%"
-        mx="8"
         maxWidth="1024px"
         h="100px"
         justify="space-between"
@@ -58,7 +57,7 @@ export const Header = () => {
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbLink as={Link} href="/">
+            <BreadcrumbLink as={Link} href="/projetos">
               Projetos
             </BreadcrumbLink>
           </BreadcrumbItem>

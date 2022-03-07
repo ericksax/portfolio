@@ -3,11 +3,10 @@ export const brandColors = {
   "background-white": "#fff",
   "dark-text": "gray.1000",
   "light-text": "gray.600",
-  "dark-line-border": "gray.500",
-  "light-line-border": "gray.600",
-  "dark-secundary-text": "#a0a0a0",
+  "dark-line-border": "gray.600",
+  "light-line-border": "gray.300",
+  "dark-secundary-text": "gray.400",
   "light-secundary-text": "gray.700",
-  "linear-gradient": "linear(to-r, #2d3bb9, #FF0080, #ff009d)",
-  "linear-gradient-point":
-    "linear-gradient(0.25turn, #2d3bb9 25%, #8c00ff, #ff00ff94 80%)",
+  "linear-gradient": "linear(to-r,   #1f43af,#00f7ff,#00f7ff)",
+  "linear-point": "linear-gradient(90deg,   #1f43af,#1f43cf,#00f7ff)",
 };

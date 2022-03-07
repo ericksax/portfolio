@@ -34,12 +34,16 @@ export const theme = extendTheme({
       },
       li: {
         a: {
+          fontSize: "md",
           letterSpacing: 2,
           _hover: {
             textDecoration: "underline",
             color: mode("white", "black")(props),
           },
         },
+      },
+      Badge: {
+        variant: mode("default", "solid")(props),
       },
     }),
   },
