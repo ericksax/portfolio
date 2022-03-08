@@ -30,7 +30,7 @@ export const Header = () => {
       <Flex
         as="nav"
         w="100%"
-        maxWidth="1024px"
+        maxWidth="780px"
         h="100px"
         justify="space-between"
         p="8"

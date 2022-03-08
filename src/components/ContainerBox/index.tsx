@@ -13,7 +13,7 @@ export const ContainerBox = ({ children, ...rest }: ContainerProps) => {
       mx="auto"
       my="8"
       minHeight="100vh"
-      maxWidth="1024px"
+      maxWidth="780px"
       {...rest}
     >
       {children}

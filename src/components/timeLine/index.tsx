@@ -1,4 +1,4 @@
-import { Button, Collapse, useColorMode } from "@chakra-ui/react";
+import { Button, Collapse, Text, useColorMode } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import Image from "next/image";
 import { useState } from "react";
@@ -135,7 +135,7 @@ export const TimeLine = () => {
         onClick={handleToggle}
         size="small"
       >
-        Ver {show ? "Menos" : "Mais"}
+        <Text>Ver {show ? "menos" : "mais"}</Text>
       </Button>
     </Box>
   );
