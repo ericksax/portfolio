@@ -29,8 +29,12 @@ const Line = styled.div`
   margin-top: 15px;
   margin-left: -8px;
   padding-left: 22px;
+  padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 20px;
+    p {
+      text-align: justify
+    }
 `;
 
 const TitleDot = styled.div`
@@ -38,6 +42,7 @@ const TitleDot = styled.div`
   top: 0px;
   left: 30px;
   transform: translateY(-20%);
+
 `;
 
 export const TimeLine = () => {
@@ -132,10 +137,16 @@ export const TimeLine = () => {
         bg="transparent"
         mt="4"
         mx="auto"
+        variant="teal"
+       
+       
         onClick={handleToggle}
         size="small"
       >
-        <Text>Ver {show ? "menos" : "mais"}</Text>
+        <Text _hover={{
+          color: "gray.300",
+          textDecoration: "underline"
+        }}>Ver {show ? "menos" : "mais"}</Text>
       </Button>
     </Box>
   );
