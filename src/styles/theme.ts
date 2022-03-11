@@ -12,7 +12,7 @@ export const theme = extendTheme({
     global: (props: ModeProps) => ({
       "html, body": {
         letterSpacing: "0.08rem",
-        fontSize: "md",
+        fontSize: ["sm", "md"],
         backgroundColor: mode(
           colors.background.dark,
           colors.background.light
@@ -34,16 +34,12 @@ export const theme = extendTheme({
       },
       li: {
         a: {
-          fontSize: "md",
           letterSpacing: 2,
           _hover: {
             textDecoration: "underline",
             color: mode("white", "black")(props),
           },
         },
-      },
-      Badge: {
-        variant: mode("default", "solid")(props),
       },
     }),
   },

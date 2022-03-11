@@ -13,7 +13,7 @@ const Home: NextPage = () => {
           <br />
           Seja bem vindo(a)
         </Title>
-        <Text py="4" px="8" textAlign="justify">
+        <Text py="4" px="8" textAlign="justify" style={{ textIndent: 20 }}>
           Me chamo Erick e sou um desenvolvedor front-end em ascenção. Aqui você
           vai encontrar um pouco da minha trajetória em busca do conhecimento e
           de uma construção de carreira no mundo das tecnologias web, pelas

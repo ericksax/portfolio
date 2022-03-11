@@ -1,6 +1,6 @@
 export const brandColors = {
   "background-dark": "#333333",
-  "background-white": "#fff",
+  "background-white": "#fafafa",
   "dark-text": "gray.1000",
   "light-text": "gray.600",
   "dark-line-border": "gray.600",

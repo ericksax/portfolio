@@ -1,11 +1,4 @@
-import {
-  Heading,
-  Text,
-  Box,
-  Stack,
-  useColorMode,
-  Flex,
-} from "@chakra-ui/react";
+import { Heading, Text, Box, Stack, useColorMode } from "@chakra-ui/react";
 
 import { TimeLine } from "../../components/timeLine";
 import { colors } from "../../styles/colors";
