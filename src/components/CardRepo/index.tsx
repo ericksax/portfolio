@@ -4,6 +4,7 @@ import {
   Flex,
   HStack,
   Img,
+  SimpleGrid,
   Text,
   useColorMode,
 } from "@chakra-ui/react";
@@ -30,7 +31,7 @@ export const CardRepo = ({ repository }: Repository) => {
       as="section"
       align="center"
       w="100%"
-      h="300px"
+      h="100%"
       justify="space-around"
       borderWidth="1px"
       borderRadius={16}
@@ -38,17 +39,20 @@ export const CardRepo = ({ repository }: Repository) => {
         IsColorLight ? colors.lineBorder.dark : colors.lineBorder.ligth
       }
     >
+      <SimpleGrid minChildWidth="180px">
+
       <Box
         as="aside"
         display="flex"
         alignItems="center"
         justifyContent="center"
-        w="50%"
+        w="100%"
+        h="100%"
       >
         <Text
           textAlign="justify"
-          p="8"
-          lineHeight="8"
+          p={["6", "8"]}
+          lineHeight="6"
           letterSpacing={2}
           color={
             IsColorLight
@@ -59,7 +63,7 @@ export const CardRepo = ({ repository }: Repository) => {
           {repository.description}
         </Text>
       </Box>
-      <Flex direction="column" p="8" w="50%" gap={4}>
+      <Flex direction="column" p={["6", "8"]} w="100" h="100%" gap={4}>
         <Box display="flex" justifyContent="center">
           <Img src={repository.image} alt="erick" borderRadius="12" />
         </Box>
@@ -75,6 +79,9 @@ export const CardRepo = ({ repository }: Repository) => {
           )}
         </HStack>
       </Flex>
+
+</SimpleGrid>
+      
     </HStack>
   );
 };
