@@ -18,10 +18,9 @@ export const MenuBurguer = () => {
         as={IconButton}
         display="flex"
         aria-label="Options"
-        icon={<FaBars size="22" />}
+        icon={<FaBars size="21" />}
         variant="unstyled"
-        size="xl"
-        px="3"
+        size="md"
         alignItems="center"
         justifyContent="center"
         color={colorMode === "light" ? "gray.400" : "gray.500"}

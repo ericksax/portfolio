@@ -20,7 +20,6 @@ export default function About(): JSX.Element {
         mx="auto"
         borderRadius={16}
         p={8}
-        my="8"
       >
         <Heading as="h1" w="100%">
           <Text

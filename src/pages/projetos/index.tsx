@@ -6,7 +6,15 @@ import { ContainerBox } from "../../components/ContainerBox";
 import { usePageData } from "../../Hooks/usePageData";
 
 export default function Projetcs(): JSX.Element {
- const {isError, isFetching, pagination, setCurrentPage, newarray, isLoading, CurrentPage} =  usePageData()
+  const {
+    isError,
+    isFetching,
+    pagination,
+    setCurrentPage,
+    newarray,
+    isLoading,
+    CurrentPage,
+  } = usePageData();
 
   return (
     <ContainerBox>
@@ -15,7 +23,6 @@ export default function Projetcs(): JSX.Element {
         w="100%"
         maxWidth="1024px"
         mx="auto"
-        mt={8}
         p="8"
         spacing="12"
         borderRadius="12"

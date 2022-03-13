@@ -5,7 +5,7 @@ export const ToggleTheme = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex align="center" justify="center" w="40px" h="100%">
+    <Flex align="center" justify="center">
       <Button variant="unstyled" onClick={toggleColorMode} display="flex">
         {colorMode === "light" ? (
           <Icon as={FaSun} h="6" w="6" color="gray.400" />

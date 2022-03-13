@@ -8,14 +8,7 @@ interface ContainerProps extends BoxProps {
 
 export const ContainerBox = ({ children, ...rest }: ContainerProps) => {
   return (
-    <Box
-      as="main"
-      mx="auto"
-      my="8"
-      minHeight="100vh"
-      maxWidth="980px"
-      {...rest}
-    >
+    <Box as="main" mx="auto" my="" minHeight="100vh" maxWidth="980px" {...rest}>
       {children}
     </Box>
   );

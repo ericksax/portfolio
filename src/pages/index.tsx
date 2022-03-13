@@ -6,7 +6,7 @@ import { getSaudation } from "../utils/utils";
 
 const Home: NextPage = () => {
   return (
-    <ContainerBox marginTop="20">
+    <ContainerBox>
       <Box>
         <Title>
           {getSaudation()},
