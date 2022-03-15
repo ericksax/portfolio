@@ -1,5 +1,6 @@
+import { colors } from "../../styles/colors";
+import { CardFooter } from "../CardFooter";
 import {
-  Badge,
   Box,
   Flex,
   HStack,
@@ -7,8 +8,8 @@ import {
   SimpleGrid,
   Text,
   useColorMode,
+  Heading,
 } from "@chakra-ui/react";
-import { colors } from "../../styles/colors";
 
 interface Repository {
   repository: {
@@ -40,48 +41,39 @@ export const CardRepo = ({ repository }: Repository) => {
       }
     >
       <SimpleGrid minChildWidth="180px">
-
-      <Box
-        as="aside"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        w="100%"
-        h="100%"
-      >
-        <Text
-          textAlign="justify"
+        <Box
+          flexDirection="column"
+          as="aside"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          w="100%"
+          h="100%"
           p={["6", "8"]}
-          lineHeight="6"
-          letterSpacing={2}
-          color={
-            IsColorLight
-              ? colors.secundaryText.dark
-              : colors.secundaryText.light
-          }
         >
-          {repository.description}
-        </Text>
-      </Box>
-      <Flex direction="column" p={["6", "8"]} w="100" h="100%" gap={4}>
-        <Box display="flex" justifyContent="center">
-          <Img src={repository.image} alt="erick" borderRadius="12" />
+          <Heading size="4" marginBottom="5">
+            {repository.repo}
+          </Heading>
+          <Text
+            textAlign="justify"
+            lineHeight="6"
+            letterSpacing={2}
+            color={
+              IsColorLight
+                ? colors.secundaryText.dark
+                : colors.secundaryText.light
+            }
+          >
+            {repository.description}
+          </Text>
         </Box>
-        <HStack justifyContent="flex-end">
-          {repository.language === "JavaScript" && (
-            <Badge colorScheme="yellow">Javascript</Badge>
-          )}
-          {repository.language === "CSS" && (
-            <Badge colorScheme="purple">CSS</Badge>
-          )}
-          {repository.language === "TypeScript" && (
-            <Badge colorScheme="blue">TypeScript</Badge>
-          )}
-        </HStack>
-      </Flex>
-
-</SimpleGrid>
-      
+        <Flex direction="column" p={["6", "8"]} w="100" h="100%" gap={4}>
+          <Box display="flex" justifyContent="center">
+            <Img src={repository.image} alt="erick" borderRadius="12" />
+          </Box>
+          <CardFooter repository={repository} />
+        </Flex>
+      </SimpleGrid>
     </HStack>
   );
 };

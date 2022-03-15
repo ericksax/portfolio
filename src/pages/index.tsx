@@ -9,15 +9,20 @@ const Home: NextPage = () => {
     <ContainerBox>
       <Box>
         <Title>
-          {getSaudation()},
+          {getSaudation()}
           <br />
-          Seja bem vindo(a)
+          Me chamo{" "}
+          <span style={{ color: "white", backgroundColor: "#0f66d8" }}>
+            Erick Freitas,
+          </span>
+          <br />
+          seja bem vindo!
         </Title>
         <Text py="4" px="8" textAlign="justify" style={{ textIndent: 20 }}>
-          Me chamo Erick e sou um desenvolvedor front-end em ascenção. Aqui você
-          vai encontrar um pouco da minha trajetória em busca do conhecimento e
-          de uma construção de carreira no mundo das tecnologias web, pelas
-          quais eu sou apaixonado.
+          Sou um desenvolvedor front-end em ascenção. Aqui você vai encontrar um
+          pouco da minha trajetória em busca do conhecimento e de uma construção
+          de carreira no mundo das tecnologias web, pelas quais eu sou
+          apaixonado.
         </Text>
       </Box>
     </ContainerBox>

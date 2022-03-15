@@ -23,7 +23,7 @@ export const MenuBurguer = () => {
         size="md"
         alignItems="center"
         justifyContent="center"
-        color={colorMode === "light" ? "gray.400" : "gray.500"}
+        color={colorMode === "light" ? "gray.300" : "gray.400"}
       />
       <MenuList
         boxSize="100%"

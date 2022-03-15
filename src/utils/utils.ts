@@ -4,11 +4,11 @@ export function getSaudation(): string {
   let saudation = "";
 
   if (conditionHours < 12) {
-    saudation = "Bom dia";
+    saudation = "Bom dia!!";
   } else if (conditionHours >= 18) {
-    saudation = "Boa noite";
+    saudation = "Boa noite!!";
   } else {
-    saudation = "Boa tarde";
+    saudation = "Boa tarde!!";
   }
   return saudation;
 }

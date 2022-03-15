@@ -17,7 +17,7 @@ export const theme = extendTheme({
           colors.background.dark,
           colors.background.light
         )(props),
-        color: "gray.300",
+        color: "gray.400",
         font_family: "Poppins, helvetica, sans-serif",
         p: {
           color: mode(
@@ -34,6 +34,8 @@ export const theme = extendTheme({
       },
       li: {
         a: {
+          color: mode("gray.300", "gray.400")(props),
+          fontWeight: "bold",
           letterSpacing: 2,
           _hover: {
             textDecoration: "underline",
