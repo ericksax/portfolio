@@ -36,10 +36,7 @@ export default function Contacts() {
         <Link isExternal href="https://github.com/ericksax">
           <FaGithub size={40} />
         </Link>
-        <Link
-          isExternal
-          href="https://www.instagram.com/invites/contact/?i=7anaav574qtg&utm_content=vc4nb"
-        >
+        <Link isExternal href="https://www.instagram.com/erick_freitas/">
           <FaInstagram size={40} />
         </Link>
         <Link
