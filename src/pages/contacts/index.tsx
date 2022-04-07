@@ -18,8 +18,17 @@ export default function Contacts() {
         </Text>
       </Heading>
       <Text px="8" style={{ textIndent: 20 }}>
-        Estou presente nas principais redes sociais, ou se preferir pode me
-        contactar por Email. Deixo também meu{" "}
+        Estou presente nas principais redes sociais, ou se preferir, pode me
+        contactar por{" "}
+        <Link
+          color={colorMode === "light" ? "gray.200" : "gray.400"}
+          isExternal
+          as="a"
+          href="mailto:erickfreitas@gmail.com"
+        >
+          Email.
+        </Link>{" "}
+        Deixo também meu{" "}
         <Link
           color={colorMode === "light" ? "gray.200" : "gray.400"}
           isExternal

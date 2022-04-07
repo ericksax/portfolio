@@ -1,5 +1,4 @@
 import { Heading, Text, Box, Stack, useColorMode } from "@chakra-ui/react";
-
 import { TimeLine } from "../../components/timeLine";
 import { colors } from "../../styles/colors";
 import Image from "next/image";
@@ -7,6 +6,7 @@ import cityPic from "../../../images/juizdefora.jpg";
 import Foz from "../../assets/fozdoiguacu.jpg";
 import { css } from "@emotion/css";
 import { ContainerBox } from "../../components/ContainerBox";
+import { Title } from "../../components/Heading";
 
 export default function About(): JSX.Element {
   const { colorMode } = useColorMode();
@@ -42,9 +42,9 @@ export default function About(): JSX.Element {
               : colors.secundaryText.light
           }
         >
-          Eu nasci em Juiz de Fora - MG em junho de 1984, foi onde eu morei por
-          20 anos até me mudar para Foz do Iguacu no Paraná residindo por dez
-          anos antes de retornar a terra natal.
+          Eu nasci em Juiz de Fora - MG, cidade localizada na Zona da Mata
+          Mineira que possui um pouco mais de 577 mil habitantes e se localiza
+          mais perto do Rio de Janeiro do que da capital Belo Horizonte.
         </Text>
 
         <Box>
@@ -95,9 +95,12 @@ export default function About(): JSX.Element {
             }
           ></Text>
         </Box>
-        <Heading as="h2" bgGradient={colors.linearGradient} bgClip="text">
+        {/* <Heading as="h2" bgGradient={colors.linearGradient} bgClip="text">
           Timeline
-        </Heading>
+        </Heading> */}
+        <Title fontSize="40px" py="10" pl="0">
+          Timeline
+        </Title>
         <TimeLine />
       </Stack>
     </ContainerBox>

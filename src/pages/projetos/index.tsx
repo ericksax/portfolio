@@ -11,7 +11,7 @@ export default function Projetcs(): JSX.Element {
     isFetching,
     pagination,
     setCurrentPage,
-    newarray,
+    newArray,
     isLoading,
     CurrentPage,
   } = usePageData();
@@ -44,7 +44,7 @@ export default function Projetcs(): JSX.Element {
         {isLoading ? (
           <Spinner />
         ) : (
-          newarray?.map((repository) => (
+          newArray?.map((repository) => (
             <CardRepo key={repository.link} repository={repository} />
           ))
         )}

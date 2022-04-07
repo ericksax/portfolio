@@ -1,5 +1,5 @@
-import styles from "./styles.module.scss";
+import { Gradient } from "./style";
 
 export const GradientBar = (): JSX.Element => {
-  return <div className={styles.gradient}></div>;
+  return <Gradient />;
 };

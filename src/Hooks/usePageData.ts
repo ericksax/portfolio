@@ -13,7 +13,7 @@ interface Repository {
 
 export const usePageData = () => {
   const [pagination, setPagination] = useState([] as number[]);
-  const [newarray, setNewArray] = useState<Repository[] | undefined>([]);
+  const [newArray, setNewArray] = useState<Repository[] | undefined>([]);
   const [CurrentPage, setCurrentPage] = useState(1);
   const limit = 2;
 
@@ -44,7 +44,7 @@ export const usePageData = () => {
 
   return {
     CurrentPage,
-    newarray,
+    newArray,
     pagination,
     setCurrentPage,
     isFetching,
