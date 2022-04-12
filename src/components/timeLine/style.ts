@@ -28,6 +28,7 @@ export const Line = styled.div`
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 20px;
+  border-left: 2px solid;
 
   p {
     text-align: justify;

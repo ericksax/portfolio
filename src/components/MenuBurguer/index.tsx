@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { FaBars } from "react-icons/fa";
+import { colors } from "../../styles/colors";
 import {
   IconButton,
   Menu,
@@ -7,8 +10,10 @@ import {
   useColorMode,
   Text,
 } from "@chakra-ui/react";
-import Link from "next/link";
-import { FaBars } from "react-icons/fa";
+
+function modeReturn(colorMode: string) {
+  return colorMode === "light" ? "gray.300" : "gray.400";
+}
 
 export const MenuBurguer = () => {
   const { colorMode } = useColorMode();
@@ -23,15 +28,19 @@ export const MenuBurguer = () => {
         size="md"
         alignItems="center"
         justifyContent="center"
-        color={colorMode === "light" ? "gray.300" : "gray.400"}
+        color={modeReturn(colorMode)}
       />
       <MenuList
         boxSize="100%"
-        backgroundColor={colorMode === "light" ? "#333333" : "#fafafa"}
+        backgroundColor={
+          colorMode === "light"
+            ? colors.background.dark
+            : colors.background.light
+        }
       >
         <MenuItem
           fontSize="20"
-          color={colorMode === "light" ? "gray.400" : "#333333"}
+          color={modeReturn(colorMode)}
           _focus={{ backgroundColor: "none" }}
           _hover={{ backgroundColor: "unset" }}
         >
@@ -41,7 +50,7 @@ export const MenuBurguer = () => {
         </MenuItem>
         <MenuItem
           fontSize="20"
-          color={colorMode === "light" ? "gray.400" : "#333333"}
+          color={modeReturn(colorMode)}
           _focus={{ backgroundColor: "none" }}
           _hover={{ backgroundColor: "unset" }}
         >
@@ -52,7 +61,7 @@ export const MenuBurguer = () => {
 
         <MenuItem
           fontSize="20"
-          color={colorMode === "light" ? "gray.400" : "#333333"}
+          color={modeReturn(colorMode)}
           _focus={{ backgroundColor: "none" }}
           _hover={{ backgroundColor: "unset" }}
         >
@@ -63,7 +72,7 @@ export const MenuBurguer = () => {
 
         <MenuItem
           fontSize="20"
-          color={colorMode === "light" ? "gray.400" : "#333333"}
+          color={modeReturn(colorMode)}
           _focus={{ backgroundColor: "none" }}
           _hover={{ backgroundColor: "unset" }}
         >

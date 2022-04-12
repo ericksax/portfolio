@@ -16,4 +16,8 @@ export const colors = {
   },
   linearGradient: brandColors["linear-gradient"],
   linearDot: brandColors["linear-point"],
+  timelineColor: {
+    dark: brandColors["timelineColor-dark"],
+    light: brandColors["timelineColor-light"],
+  },
 };

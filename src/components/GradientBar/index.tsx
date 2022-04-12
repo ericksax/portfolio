@@ -1,4 +1,4 @@
-import { Gradient } from "./style";
+import { Gradient } from "./styles";
 
 export const GradientBar = (): JSX.Element => {
   return <Gradient />;

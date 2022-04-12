@@ -9,4 +9,6 @@ export const brandColors = {
   "light-secundary-text": "gray.700",
   "linear-gradient": "linear(to-r,   #1f43af,#00f7ff,#00f7ff)",
   "linear-point": "linear-gradient(90deg,   #1f43af,#1f43cf,#00f7ff)",
+  "timelineColor-light": "#A0A0A0",
+  "timelineColor-dark": "#99A6B7",
 };

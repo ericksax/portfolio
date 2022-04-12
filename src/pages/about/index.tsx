@@ -1,9 +1,9 @@
-import { Heading, Text, Box, Stack, useColorMode } from "@chakra-ui/react";
-import { TimeLine } from "../../components/timeLine";
-import { colors } from "../../styles/colors";
 import Image from "next/image";
 import cityPic from "../../../images/juizdefora.jpg";
 import Foz from "../../assets/fozdoiguacu.jpg";
+import { Heading, Text, Box, Stack, useColorMode } from "@chakra-ui/react";
+import { TimeLine } from "../../components/timeLine";
+import { colors } from "../../styles/colors";
 import { css } from "@emotion/css";
 import { ContainerBox } from "../../components/ContainerBox";
 import { Title } from "../../components/Heading";
@@ -47,15 +47,14 @@ export default function About(): JSX.Element {
           mais perto do Rio de Janeiro do que da capital Belo Horizonte.
         </Text>
 
-        <Box>
+        <Box display="flex" flexDirection="column" gap="2">
           <Image
             src={cityPic}
             alt="foto da cidade Juiz de Fora"
-            height="380px"
             className={css`
               border-radius: 16px;
             `}
-          ></Image>
+          />
           <p>Juiz de Fora - MG</p>
         </Box>
         <Text
@@ -78,26 +77,14 @@ export default function About(): JSX.Element {
         <Box>
           <Image
             src={Foz}
-            alt="cidade de Foz de Iguacu"
+            alt="foto da cidade de Foz de Iguacu"
             className={css`
               border-radius: 16px;
             `}
           />
           <p>Foz do Iguacu - PR</p>
-          <Text
-            lineHeight="2"
-            textAlign="justify"
-            style={{ textIndent: 20 }}
-            color={
-              colorMode === "light"
-                ? colors.secundaryText.dark
-                : colors.secundaryText.light
-            }
-          ></Text>
         </Box>
-        {/* <Heading as="h2" bgGradient={colors.linearGradient} bgClip="text">
-          Timeline
-        </Heading> */}
+
         <Title fontSize="40px" py="10" pl="0">
           Timeline
         </Title>
