@@ -1,5 +1,6 @@
 
-## erickfreitas.dev
+## <a ahef="www.erickfreitas.dev">erickfreitas.dev</a>
+
 <div align="center", padding="50px">
 <img src="https://i.ibb.co/ZYpRY5h/erickfreitas-dev.jpg" alt="erickfreitas-dev" border="0" height= 400px>
 </div>
