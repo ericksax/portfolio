@@ -67,9 +67,9 @@ export default function About(): JSX.Element {
               : colors.secundaryText.light
           }
         >
-          Foz do iguacu foi com certeza uma das cidades mais lindas que eu ja
+          Foz do Iguaçu foi com certeza uma das cidades mais lindas que eu ja
           estive, foi um privilégio morar lá por 10 anos. Cidade muito
-          arborizada onde a presenca da natureza nao passa desapercebida em
+          arborizada onde a presença da natureza não passa desapercebida em
           nenhum minuto. Foi lá onde fiz amigos com os quais tenho contato até
           os dias de hoje.
         </Text>

@@ -32,14 +32,14 @@ export default function Contacts() {
         <Link
           color={colorMode === "light" ? "gray.200" : "gray.400"}
           isExternal
-          href="https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:a067a89a-f05e-43db-bb7d-0146b728b0b6"
+          href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:e0c64d89-3420-4b5e-8900-09f957236c52"
         >
           currículo
         </Link>{" "}
-        para apreciacao.
+        para apreciação.
       </Text>
       <HStack p="8" spacing={30}>
-        <Link isExternal href="https://linkedin.com/in/erick-freitas-dev">
+        <Link isExternal href="https://www.linkedin.com/in/erickfreitas-dev/">
           <FaLinkedin size={40} />
         </Link>
         <Link isExternal href="https://github.com/ericksax">
