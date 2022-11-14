@@ -32,7 +32,7 @@ export default function Contacts() {
         <Link
           color={colorMode === "light" ? "gray.200" : "gray.400"}
           isExternal
-          href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:e0c64d89-3420-4b5e-8900-09f957236c52"
+          href="https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:fe17cc20-c6b1-4b07-9050-57fc3f6cf164"
         >
           currículo
         </Link>{" "}
