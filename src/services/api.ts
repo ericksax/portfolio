@@ -1,5 +1,5 @@
 import axios from "axios";
-
+const proxyAnywhere = "https://cors-proxy.htmldriven.com/?url=";
 export const api = axios.create({
-  baseURL: "https://gh-pinned-repos.egoist.dev/",
+  baseURL: proxyAnywhere + "https://pinned.thrzl.xyz/",
 });

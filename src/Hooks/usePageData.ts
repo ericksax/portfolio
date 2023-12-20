@@ -20,7 +20,7 @@ export const usePageData = () => {
   const { data, isFetching, isLoading, isError } = useQuery<Repository[]>(
     "pinnedRepos",
     async () => {
-      const { data } = await api("?username=ericksax");
+      const { data } = await api("ericksax");
       const limit = 2;
       const Pages = Math.ceil(data.length / limit);
       const arrayPages = [];
